@@ -1,0 +1,7 @@
+services:
+  web:
+    image: shinsenter/codeigniter4:latest
+    volumes:
+      - .:/var/www/html
+    ports:
+      - 8686:80
