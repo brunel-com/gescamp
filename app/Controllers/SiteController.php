@@ -10,14 +10,11 @@ class SiteController extends BaseController
      */
     public function index()
     {
-        /* $model = model(Obj::class);
+        $model = model(Obj::class);
         $objList = $model->getAll();
         $data = [
             'objList' => $objList,
             'title' => 'Liste des sites',
-        ]; */
-        $data = [
-            'title' => 'Liste des sites'
         ];
 
         return view('templates/header', $data)
