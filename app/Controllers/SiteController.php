@@ -21,7 +21,7 @@ class SiteController extends BaseController
         ];
 
         return view('templates/header', $data)
-            . view('site/index')
+            . view('sites/index')
             . view('templates/footer');
         
     }
