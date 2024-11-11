@@ -13,7 +13,7 @@ CREATE TABLE chambres
     id INT PRIMARY KEY NOT NULL,
     status VARCHAR(30) DEFAULT 'bon',
     sites VARCHAR(30),
-    équipements VARCHAR(100),
+    equipements VARCHAR(100),
 )
 
 CREATE TABLE etudiants

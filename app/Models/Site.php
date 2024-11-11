@@ -3,13 +3,13 @@ namespace App\Models;
 
 use CodeIgniter\Model;
 
-class Chambre extends Model
+class Site extends Model
 {
-    protected $table = 'chambres';
+    protected $table = 'sites';
     protected $primaryKey = 'id';
 
     // les champs de la table qu'on peut edit lors des inserts et updates sur la db
-    protected $allowedFields = ['id', 'status', 'sites', 'equipements'];
+    protected $allowedFields = ['id', 'chambres', 'label'];
 
     /**
      * Liste des objets
