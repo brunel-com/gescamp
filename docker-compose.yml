@@ -5,3 +5,12 @@ services:
       - .:/var/www/html
     ports:
       - 8686:80
+  db:
+    image: mysql
+    restart: always
+    environment:
+      MYSQL_ROOT_PASSWORD: password
+    volumes:
+      - /Users/nick/mysql/data:/var/lib/mysql
+    ports:
+      - 3306:3306
