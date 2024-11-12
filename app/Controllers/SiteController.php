@@ -17,9 +17,7 @@ class SiteController extends BaseController
             'title' => 'Liste des sites',
         ];
 
-        return view('templates/header', $data)
-            . view('sites/index')
-            . view('templates/footer');
+        return view('sites/index', $data);
         
     }
 
