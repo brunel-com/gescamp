@@ -11,7 +11,7 @@ CREATE TABLE users
 CREATE TABLE chambres
 (
     id INT PRIMARY KEY NOT NULL,
-    status VARCHAR(30) DEFAULT 'Disponible',
+    statut VARCHAR(30) DEFAULT 'Disponible',
     equipements VARCHAR(100),
     numero VARCHAR(50),
     site VARCHAR(30)
