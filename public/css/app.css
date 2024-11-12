@@ -1,0 +1,81 @@
+/* Base Styling - Ensures clean layout */
+body {
+  font-family: "Arial", sans-serif;
+  /* background-color: #f8f9fa; */
+  color: #495057;
+}
+
+/* Modal Header and Footer - Remove background colors for a cleaner, more modern look */
+.modal-header,
+.modal-footer {
+  background-color: transparent; /* Remove background color */
+  border: 0; /* Remove borders for a cleaner design */
+}
+
+/* Modal Content Rounded Corners */
+.modal-content {
+  border-radius: 1rem; /* Rounded corners for the modal */
+}
+
+/* Close Button in Modal Header */
+.modal-header .btn-close {
+  font-size: 1.3rem; /* Slightly larger close button */
+}
+
+/* Modal Footer Buttons */
+.modal-footer button {
+  font-size: 1rem;
+  padding: 0.5rem 1rem;
+  border-radius: 0.375rem; /* Rounded corners for footer buttons */
+}
+
+/* Table Hover Effects */
+.table-hover tbody tr:hover {
+  background-color: rgba(
+    0,
+    123,
+    255,
+    0.1
+  ); /* Lighter blue background on row hover */
+}
+
+/* Table and Header Styling */
+table {
+  width: 100%;
+  margin-bottom: 1rem;
+  border-collapse: collapse; /* Remove gaps between table borders */
+}
+
+th,
+td {
+  padding: 0.75rem;
+  text-align: left;
+  border-bottom: 1px solid #dee2e6;
+}
+
+thead {
+  background-color: var(--bs-light); /* Light background for the table header */
+}
+
+/* Form Inputs */
+.form-control,
+.form-select {
+  border-radius: 0.375rem; /* Rounded corners for inputs and selects */
+  padding: 0.75rem; /* Comfortable padding for inputs */
+  font-size: 1rem; /* Easy to read font size */
+  border: 1px solid var(--bs-border-color); /* Bootstrap's border color */
+}
+
+.form-control:focus,
+.form-select:focus {
+  border-color: var(--bs-primary); /* Focus color using primary */
+  box-shadow: 0 0 0 0.25rem rgba(38, 143, 255, 0.25); /* Focus shadow */
+}
+
+/* Responsive adjustments for smaller screens */
+@media (max-width: 768px) {
+  .modal-dialog {
+    max-width: 100%;
+    margin: 1rem;
+  }
+}
