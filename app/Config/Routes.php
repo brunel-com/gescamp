@@ -12,3 +12,4 @@ $routes->get('/', 'HomeController::index');
  *  Les sites
  */
 $routes->get('/sites', 'SiteController::index');
+$routes->get('/chambres', 'ChambreController::index');

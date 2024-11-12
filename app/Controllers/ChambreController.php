@@ -12,6 +12,12 @@ class ChambreController extends BaseController
     {
         $model = model(Obj::class);
         $objList = $model->getAll();
+        $data = [
+            'objList' => $objList,
+            'title' => 'Liste des chambres',
+        ];
+
+        return view('chambres/index', $data);
     }
 
     public function show($id)
