@@ -26,5 +26,16 @@ class ChambreController extends BaseController
         $obj = $model->get($id);
     }
 
+    /**
+     *  Create view
+     */
+    public function create()
+    {
+        $data = [
+            'title' => 'Ajouter une chambre',
+        ];
+        return view('chambres/create_view');
+    }
+
     
 }

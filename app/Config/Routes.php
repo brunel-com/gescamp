@@ -13,3 +13,4 @@ $routes->get('/', 'HomeController::index');
  */
 $routes->get('/sites', 'SiteController::index');
 $routes->get('/chambres', 'ChambreController::index');
+$routes->get('/chambres/create', 'ChambreController::create');

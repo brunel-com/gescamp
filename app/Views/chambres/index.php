@@ -6,9 +6,9 @@
 <div class="d-flex justify-content-between mb-3">
     <h4><?= esc($title) ?></h4>
     <!-- Add Room Button -->
-    <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#addRoomModal">
+    <a href="/chambres/create" class="btn btn-primary">
         <i class="bi bi-plus-circle"></i> Ajouter
-    </button>
+    </a>
 </div>
 
 <table id="roomsTable" class="table table-hover border rounded">

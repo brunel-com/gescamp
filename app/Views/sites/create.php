@@ -3,16 +3,16 @@
     <div class="modal-dialog">
         <div class="modal-content rounded-3">
             <div class="modal-header border-0">
-                <h5 class="modal-title" id="addRoomModalLabel">Add New Room</h5>
+                <h5 class="modal-title" id="addRoomModalLabel">Ajouter Site</h5>
                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
             <div class="modal-body">
                 <form id="addRoomForm">
                     <div class="mb-3">
-                        <label for="roomNumber" class="form-label">Room Number</label>
-                        <input type="text" class="form-control" id="roomNumber" placeholder="Enter room number" required>
+                        <label for="roomNumber" class="form-label">Label</label>
+                        <input type="text" class="form-control" id="roomNumber" placeholder="Label du site" required>
                     </div>
-                    <div class="mb-3">
+                    <!-- <div class="mb-3">
                         <label for="roomType" class="form-label">Room Type</label>
                         <select class="form-select" id="roomType" required>
                             <option value="">Select Room Type</option>
@@ -32,7 +32,7 @@
                             <option value="occupied">Occupied</option>
                             <option value="under_maintenance">Under Maintenance</option>
                         </select>
-                    </div>
+                    </div> -->
                 </form>
             </div>
             <div class="modal-footer border-0">
