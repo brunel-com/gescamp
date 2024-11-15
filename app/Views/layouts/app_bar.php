@@ -55,24 +55,24 @@
 
     /* Breadcrumb styling */
     .breadcrumb-container {
-            background-color: #f8f9fa;
-            padding: 0.75rem 1rem;
-            border-top: 1px solid #e0e0e0;
-        }
+        background-color: #f8f9fa;
+        padding: 0.75rem 1rem;
+        border-top: 1px solid #e0e0e0;
+    }
 
-        .breadcrumb {
-            margin: 0;
-            background-color: transparent;
-        }
+    .breadcrumb {
+        margin: 0;
+        background-color: transparent;
+    }
 
-        .breadcrumb-item a {
-            color: #007bff;
-            text-decoration: none;
-        }
+    .breadcrumb-item a {
+        color: #007bff;
+        text-decoration: none;
+    }
 
-        .breadcrumb-item.active {
-            color: #6c757d;
-        }
+    .breadcrumb-item.active {
+        color: #6c757d;
+    }
 </style>
 
 <nav class="navbar navbar-expand-lg navbar-light">
@@ -107,13 +107,13 @@
 
 <!-- Breadcrumb -->
 <div class="breadcrumb-container">
-        <div class="container">
-            <nav aria-label="breadcrumb">
-                <ol class="breadcrumb mb-0">
-                    <li class="breadcrumb-item"><a href="#">Accueil</a></li>
-                    <li class="breadcrumb-item"><a href="#">Library</a></li>
-                    <li class="breadcrumb-item active" aria-current="page">Data</li>
-                </ol>
-            </nav>
-        </div>
+    <div class="container">
+        <nav aria-label="breadcrumb">
+            <ol class="breadcrumb mb-0">
+                <li class="breadcrumb-item"><a href="#">Accueil</a></li>
+                <li class="breadcrumb-item active"><a href="#">Chambres</a></li>
+                <!-- <li class="breadcrumb-item active" aria-current="page">Data</li> -->
+            </ol>
+        </nav>
     </div>
+</div>

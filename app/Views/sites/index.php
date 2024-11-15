@@ -17,15 +17,15 @@
             <th>Label</th>
             <th>Chambres</th>
             <!-- <th>Capacity</th>
-            <th>Status</th>
-            <th>Actions</th> -->
+            <th>Status</th> -->
+            <th>Actions</th>
         </tr>
     </thead>
     <tbody>
         <tr>
             <td>101</td>
             <td>Chambre 101, Chambre 102, Chambre 103</td>
-            <!-- <td>Available</td>
+            <!-- <td>Available</td> -->
             <td>
                 <button type="button" class="btn btn-link p-0" data-bs-toggle="popover" data-bs-html="true" data-bs-content="
                             <button data-bs-toggle='modal' data-bs-target='#addRoomModal' id='updateRoomBtn' class='btn btn-outline-warning btn-sm w-100 mb-2'>
@@ -34,9 +34,9 @@
                             <button id='deleteRoomBtn' data-bs-toggle='modal' data-bs-target='#deleteRoomModal' class='btn btn-outline-danger btn-sm w-100'>
                                 <i class='bi bi-trash'></i> Delete Room
                             </button>">
-                    <i class="bi bi-three-dots"></i> 
+                    <i class="bi bi-three-dots"></i>
                 </button>
-            </td> -->
+            </td>
         </tr>
         <!-- <tr>
             <td>102</td>

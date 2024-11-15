@@ -18,8 +18,8 @@
         <?= $this->renderSection('content') ?>
     </main>
 
-    <footer class="container">
-        <em>&copy; Brunel.com 2024</em>
+    <footer class="container mt-5">
+        <em>&copy; Footer Brunel.com 2024</em>
     </footer>
      <!-- jQuery (required for DataTables) -->
      <!-- <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script> -->
