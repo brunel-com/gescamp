@@ -31,7 +31,7 @@ class ChambreController extends BaseController
     /**
      *  Create view
      */
-    public function create()
+    public function create_view()
     {
         $siteModel = model(Site::class);
         $sites = $siteModel->getAll();
@@ -45,7 +45,7 @@ class ChambreController extends BaseController
     /**
      * Insert dans la BD
      */
-    public function store()
+    public function create()
     {
         $model = model(Obj::class);
         if ($this->validate([

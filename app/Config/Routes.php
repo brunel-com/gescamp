@@ -19,5 +19,5 @@ $routes->get('/sites', 'SiteController::index');
  * 
  */
 $routes->get('/chambres', 'ChambreController::index', ['as' => 'chambres.index']);
-$routes->get('/chambres/create', 'ChambreController::create', ['as' => 'chambres.create']);
-$routes->post('/chambres/create', 'ChambreController::store', ['as' => 'chambres.store']);
+$routes->get('/chambres/create', 'ChambreController::create_view', ['as' => 'chambres.create']);
+$routes->post('/chambres/create', 'ChambreController::create', ['as' => 'chambres.store']);
