@@ -1,6 +1,6 @@
 CREATE TABLE users
 (
-    id INT PRIMARY KEY NOT NULL,
+    id INT UNSIGNED PRIMARY KEY NOT NULL AUTO_INCREMENT,
     nom VARCHAR(100),
     prenom VARCHAR(100),
     role VARCHAR(30),
@@ -10,7 +10,7 @@ CREATE TABLE users
 
 CREATE TABLE chambres
 (
-    id INT PRIMARY KEY NOT NULL,
+    id INT UNSIGNED PRIMARY KEY NOT NULL AUTO_INCREMENT,
     statut VARCHAR(30) DEFAULT 'Disponible',
     equipements VARCHAR(100),
     numero VARCHAR(50),
@@ -19,7 +19,7 @@ CREATE TABLE chambres
 
 CREATE TABLE etudiants
 (
-    id INT PRIMARY KEY NOT NULL,
+    id INT UNSIGNED PRIMARY KEY NOT NULL AUTO_INCREMENT,
     nom VARCHAR(100),
     prenom VARCHAR(100),
     classe VARCHAR(30),
@@ -31,7 +31,7 @@ CREATE TABLE etudiants
 
 CREATE TABLE equipements
 (
-    id INT PRIMARY KEY NOT NULL,
+    id INT UNSIGNED PRIMARY KEY NOT NULL AUTO_INCREMENT,
     type VARCHAR(100),
     etat VARCHAR(100) DEFAULT 'bon',
     id_chambre INT,
@@ -40,7 +40,7 @@ CREATE TABLE equipements
 
 CREATE TABLE sites
 (
-    id INT PRIMARY KEY NOT NULL,
+    id INT UNSIGNED PRIMARY KEY NOT NULL AUTO_INCREMENT,
     chambres VARCHAR(200),
     label VARCHAR(100)
 )
