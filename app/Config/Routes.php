@@ -18,5 +18,6 @@ $routes->get('/sites', 'SiteController::index');
  * Fonctionnalité chambres
  * 
  */
-$routes->get('/chambres', 'ChambreController::index');
-$routes->get('/chambres/create', 'ChambreController::create');
+$routes->get('/chambres', 'ChambreController::index', ['as' => 'chambres.index']);
+$routes->get('/chambres/create', 'ChambreController::create', ['as' => 'chambres.create']);
+$routes->post('/chambres/create', 'ChambreController::store', ['as' => 'chambres.store']);

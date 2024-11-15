@@ -11,6 +11,10 @@
     </a>
 </div>
 
+<?php if (session()->has('chambres_create_success')): ?>
+    <p class="text-error"><?= esc(session('chambres_create_success')) ?></p>
+<?php endif ?>
+
 <table id="roomsTable" class="table table-hover border rounded">
     <thead>
         <tr>

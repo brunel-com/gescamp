@@ -2,6 +2,8 @@
 
 <?= $this->section('content') ?>
 
+<?= service('validation')->listErrors() ?>
+
 <!-- Container for the Add Room Page -->
 <div class="container py-5">
     <h2 class="text-center mb-4">Nouvelle Chambre</h2>
@@ -11,30 +13,32 @@
         <div class="col-md-8">
             <div class="card shadow-sm">
                 <div class="card-body p-4">
-                    <form id="addRoomForm">
+                    <form id="addRoomForm" action="/chambres/create" method="post">
+                        <?= csrf_field() ?>
+
                         <div class="mb-3">
-                            <label for="roomName" class="form-label">Numéro</label>
-                            <input type="text" class="form-control" id="roomName" placeholder="Numéro de la chambre" required>
+                            <label for="numero" class="form-label">Numéro</label>
+                            <input type="text" class="form-control" name="numero" id="numero" placeholder="Numéro de la chambre" required>
                         </div>
                         <!-- <div class="mb-3">
                             <label for="capacity" class="form-label">Capacity</label>
                             <input type="number" class="form-control" id="capacity" placeholder="Enter Capacity" required>
                         </div> -->
                         <div class="mb-3">
-                            <label for="roomType" class="form-label">Site</label>
-                            <select class="form-select" id="roomType" required>
+                            <label for="site" class="form-label">Site</label>
+                            <select class="form-select" id="site" name="site" required>
                                 <option value="">Choisir Site...</option>
-                                <option value="Standard">Ex 1</option>
-                                <option value="Deluxe">Ex 2</option>
-                                <option value="Suite">Ex 3</option>
+                                <?php foreach ($sites as $site): ?>
+                                    <option value="<?= esc($site['label']) ?>"><?= esc($site['label']) ?></option>
+                                <?php endforeach ?>
                             </select>
                         </div>
                         <div class="mb-3">
-                            <label for="roomType" class="form-label">Statut</label>
-                            <select class="form-select" id="roomType" required>
+                            <label for="statut" class="form-label">Statut</label>
+                            <select class="form-select" id="statut" name="statut" required>
                                 <option value="">Statut...</option>
-                                <option value="Standard">Disponible</option>
-                                <option value="Deluxe">Occupé</option>
+                                <option value="disponible">Disponible</option>
+                                <option value="occupe">Occupé</option>
                             </select>
                         </div>
                         <div class="d-flex justify-content-end">

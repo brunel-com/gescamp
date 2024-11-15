@@ -9,7 +9,7 @@ class Chambre extends Model
     protected $primaryKey = 'id';
 
     // les champs de la table qu'on peut edit lors des inserts et updates sur la db
-    protected $allowedFields = ['id', 'status', 'sites', 'equipements'];
+    protected $allowedFields = ['id', 'statut', 'site', 'equipements', 'numero'];
 
     /**
      * Liste des objets
