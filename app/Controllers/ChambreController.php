@@ -39,7 +39,7 @@ class ChambreController extends BaseController
             'title' => 'Ajouter une chambre',
             'sites' => $sites
         ];
-        return view('chambres/create_view', $data);
+        return view('chambres/create', $data);
     }
 
     /**
