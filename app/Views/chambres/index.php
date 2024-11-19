@@ -35,9 +35,9 @@
                 <td><?= esc($obj['statut']) ?></td>
                 <td>
                     <button type="button" class="btn btn-link p-0" data-bs-toggle="popover" data-bs-html="true" data-bs-content="
-                            <button data-bs-toggle='modal' data-bs-target='#addRoomModal' id='updateRoomBtn' class='btn btn-outline-warning btn-sm w-100 mb-2'>
+                            <a href='/chambres/update?id=<?= esc($obj['id']) ?>' id='updateRoomBtn' class='btn btn-outline-warning btn-sm w-100 mb-2'>
                                 <i class='bi bi-pencil'></i> Modifier
-                            </button>
+                            </a>
                             <button id='deleteRoomBtn' data-bs-toggle='modal' data-bs-target='#deleteRoomModal' class='btn btn-outline-danger btn-sm w-100'>
                                 <i class='bi bi-trash'></i> Supprimer
                             </button>">
@@ -68,6 +68,5 @@
 
 
 
-<?= $this->include('sites/create.php') ?>
 <?= $this->include('sites/delete.php') ?>
 <?= $this->endSection() ?>

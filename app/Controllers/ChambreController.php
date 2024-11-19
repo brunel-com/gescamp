@@ -68,4 +68,57 @@ class ChambreController extends BaseController
             return $this->create();
         }
     }
+
+    /**
+     *  Update view
+     */
+    public function update_view()
+    {
+        $siteModel = model(Site::class);
+        $sites = $siteModel->getAll();
+
+        $model = model(Obj::class);
+        $obj = $model->get($_GET['id']);
+
+        $data = [
+            'title' => 'Éditer une chambre',
+            'sites' => $sites,
+            'obj' => $obj
+        ];
+        return view('chambres/update', $data);
+    }
+
+    /**
+     * Update obj dans la BD
+     */
+    public function update()
+    {
+        $model = model(Obj::class);
+        if ($this->validate([
+            'numero' => 'required|min_length[3]|max_length[10]',
+            'site' => 'required',
+            'statut' => 'required',
+        ])) {
+            $data = [
+                'numero' => $this->request->getPost('numero'),
+                'site' => $this->request->getPost('site'),
+                'statut' => $this->request->getPost('statut'),
+            ];
+            $id = $this->request->getPost('id');
+            $model->update($id, $data);
+            /* $model->save([
+                'numero' => $this->request->getPost('numero'),
+                'site' => $this->request->getPost('site'),
+                'statut' => $this->request->getPost('statut'),
+            ]); */
+
+            session()->setFlashData('chambres_update_success', 'Chambre edité avec succès');
+
+            // echo view('chambres/success');
+            return redirect()->route('chambres.index');
+        } else {
+            // afficher la vue du formulaire si le formulaire n'est pas bien rempli
+            return $this->update();
+        }
+    }
 }
