@@ -87,14 +87,14 @@ document.addEventListener('DOMContentLoaded', function () {
         });
 
         // Handle confirmation of room deletion
-        document.getElementById('confirmDeleteBtn').addEventListener('click', function () {
+        /* document.getElementById('confirmDeleteBtn').addEventListener('click', function () {
             // Logic to delete the room, such as making a request to delete the room from the database
             console.log("Room deleted");
 
             // Close the modal after confirmation
             const deleteRoomModal = new bootstrap.Modal(document.getElementById('deleteRoomModal'));
             deleteRoomModal.hide();
-        });
+        }); */
     }
 
 

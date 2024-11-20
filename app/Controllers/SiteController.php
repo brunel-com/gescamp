@@ -1,6 +1,7 @@
 <?php
 namespace App\Controllers;
 
+use App\Models\Chambre;
 use App\Models\Site as Obj;
 
 class SiteController extends BaseController
@@ -12,6 +13,13 @@ class SiteController extends BaseController
     {
         $model = model(Obj::class);
         $objList = $model->getAll();
+
+        $chambreModel = model(Chambre::class);
+
+        foreach ($objList as $obj) {
+            $obj['chambres'] = implode(", ", $chambreModel->where('site', $obj['label'])->findColumn('numero'));
+        }
+
         $data = [
             'objList' => $objList,
             'title' => 'Liste des sites',
