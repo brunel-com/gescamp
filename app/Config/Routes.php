@@ -55,3 +55,7 @@ $routes->post('/etudiants/delete', 'EtudiantController::delete', ['as' => 'etudi
 $routes->get('/equipements', 'EquipementController::index', ['as' => 'equipements.index']);
 $routes->get('/equipements/create', 'EquipementController::create_view', ['as' => 'equipements.create_view']);
 $routes->post('/equipements/create', 'EquipementController::create', ['as' => 'equipements.create']);
+$routes->get('/equipements/update', 'EquipementController::update_view', ['as' => 'equipements.update_view']);
+$routes->post('/equipements/update', 'EquipementController::update', ['as' => 'equipements.update']);
+$routes->get('/equipements/delete', 'EquipementController::delete_view', ['as' => 'equipements.delete_view']);
+$routes->post('/equipements/delete', 'EquipementController::delete', ['as' => 'equipements.delete']);

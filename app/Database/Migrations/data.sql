@@ -11,7 +11,7 @@ CREATE TABLE users
 CREATE TABLE chambres
 (
     id INT UNSIGNED PRIMARY KEY NOT NULL AUTO_INCREMENT,
-    statut VARCHAR(30) DEFAULT 'Disponible',
+    statut VARCHAR(30) DEFAULT 'DISPONIBLE',
     equipements VARCHAR(100),
     numero VARCHAR(50),
     site VARCHAR(30),
@@ -34,7 +34,7 @@ CREATE TABLE equipements
 (
     id INT UNSIGNED PRIMARY KEY NOT NULL AUTO_INCREMENT,
     type VARCHAR(100),
-    etat VARCHAR(100) DEFAULT 'Bon',
+    etat VARCHAR(100) DEFAULT 'BON',
     chambre VARCHAR(50),
     quantite SMALLINT UNSIGNED DEFAULT 1,
     CONSTRAINT uq_equipement UNIQUE(type,chambre),

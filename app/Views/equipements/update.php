@@ -11,12 +11,14 @@
         <div class="col-md-8">
             <div class="card shadow-sm border-0">
                 <div class="card-body">
-                    <form action="/equipements/create" method="post">
+                    <form action="/equipements/update" method="post">
                         <?= csrf_field() ?>
+
+                        <input type="hidden" name='id' value="<?= esc($obj['id'])?>" />
 
                         <div class="mb-3">
                             <label for="type" class="form-label">Type</label>
-                            <input type="text" class="form-control" id="type" name="type" value="<?= old('type') ?>" required />
+                            <input type="text" class="form-control" id="type" name="type" value="<?= esc($obj['type'])?>" required />
                         </div>
 
                         <!-- Cycle -->
@@ -24,8 +26,8 @@
                             <label for="etat" class="form-label">État</label>
                             <select class="form-select" id="etat" name="etat" required>
                                 <option selected disabled>Choisir État...</option>
-                                <option value="BON">Bon</option>
-                                <option value="ENDOMMAGE">Endommagé</option>
+                                <option <?= $obj['etat'] == 'BON' ? 'selected' : '' ?> value="BON">Bon</option>
+                                <option <?= $obj['etat'] == 'ENDOMMAGE' ? 'selected' : '' ?> value="ENDOMMAGE">Endommagé</option>
                             </select>
                         </div>
 
@@ -35,14 +37,14 @@
                             <select class="form-select" id="chambre" name="chambre">
                                 <option selected disabled>Assigner une chambre...</option>
                                 <?php foreach ($chambres as $chambre): ?>
-                                    <option value="<?= esc($chambre['numero']) ?>">Chambre <?= esc($chambre['numero']) ?></option>
+                                    <option <?= $obj['chambre'] == $chambre['numero'] ? 'selected' : '' ?> value="<?= esc($chambre['numero']) ?>">Chambre <?= esc($chambre['numero']) ?></option>
                                 <?php endforeach ?>
                             </select>
                         </div>
 
                         <div class="mb-3">
                             <label for="quantite" class="form-label">Quantité</label>
-                            <input type="number" class="form-control" id="quantite" name="quantite" min="1" value="<?= old('quantite') ?>" required>
+                            <input type="number" class="form-control" id="quantite" name="quantite" min="1" value="<?= esc($obj['quantite'])?>" required>
                         </div>
 
                         <!-- Actions -->
