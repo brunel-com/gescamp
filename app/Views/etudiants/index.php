@@ -26,15 +26,15 @@
             <tr>
                 <td>
                     <span class="badge bg-primary rounded-circle p-3 text-white">
-                        JD
+                        <?= esc(ucfirst($obj['nom'][0]) . ucfirst($obj['prenom'][0])) ?>
                     </span>
                 </td>
-                <td>Doe</td>
-                <td>John</td>
-                <td>10A</td>
-                <td>Science</td>
-                <td>1</td>
-                <td>Room 101</td>
+                <td><?= esc($obj['nom']) ?></td>
+                <td><?= esc($obj['prenom']) ?></td>
+                <td><?= esc($obj['classe']) ?></td>
+                <td><?= esc($obj['filiere']) ?></td>
+                <td><?= esc($obj['cycle']) ?></td>
+                <td><?= esc($obj['chambre']) ?></td>
                 <td>
                     <a href="/etudiants/update?id=<?= esc($obj['id']) ?>" class="btn btn-sm btn-primary">
                         <i class="bi bi-pencil-square"></i>

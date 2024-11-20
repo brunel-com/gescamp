@@ -8,7 +8,7 @@ class Etudiant extends Model
 {
     protected $table = 'etudiants';
     protected $primaryKey = 'id';
-    protected $allowedFields = ['nom', 'prenom', 'email', 'telephone', 'adresse', 'date_naissance', 'id_classe'];
+    protected $allowedFields = ['nom', 'prenom', 'classe', 'filiere', 'cycle', 'chambre'];
 
     public function getAll()
     {

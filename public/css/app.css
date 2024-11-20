@@ -89,3 +89,13 @@ thead {
   width: fit-content;
   z-index: 9999;
 }
+
+.badge {
+  width: 2.5rem;
+  height: 2.5rem;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 1rem;
+  font-weight: 600;
+}

@@ -14,7 +14,8 @@ CREATE TABLE chambres
     statut VARCHAR(30) DEFAULT 'Disponible',
     equipements VARCHAR(100),
     numero VARCHAR(50),
-    site VARCHAR(30)
+    site VARCHAR(30),
+    CONSTRAINT uq_numero UNIQUE(numero)
 );
 
 CREATE TABLE etudiants
@@ -25,8 +26,8 @@ CREATE TABLE etudiants
     classe VARCHAR(30),
     filiere VARCHAR(30) DEFAULT NULL,
     cycle VARCHAR(10) DEFAULT NULL,
-    id_chambre INT UNSIGNED NULL,
-    FOREIGN KEY(id_chambre) REFERENCES chambres(id)
+    chambre VARCHAR(50) NULL,
+    FOREIGN KEY(chambre) REFERENCES chambres(numero)
 );
 
 CREATE TABLE equipements
