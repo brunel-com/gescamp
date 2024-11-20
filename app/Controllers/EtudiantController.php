@@ -40,7 +40,10 @@ class EtudiantController extends BaseController
         ])) {
 
             $obj->create($this->request->getPost());
-            return redirect()->route('etudiants.index');
+
+            session()->setFlashData('flash_operation_success', 'success');
+
+            return redirect()->to('/etudiants');
         } else {
             return $this->create_view();
         }
@@ -73,7 +76,10 @@ class EtudiantController extends BaseController
         ])) {
             $id = $this->request->getPost('id');
             $model->update($id, $this->request->getPost());
-            return redirect()->route('etudiants.index');
+
+            session()->setFlashData('flash_operation_success', 'success');
+
+            return redirect()->to('/etudiants');
         } else {
             return $this->update_view();
         }
@@ -98,6 +104,9 @@ class EtudiantController extends BaseController
     {
         $obj = model(Obj::class);
         $obj->delete($this->request->getPost('id'));
+
+        session()->setFlashData('flash_operation_success', 'success');
+
         return redirect()->to('/etudiants');
     }
 }   
