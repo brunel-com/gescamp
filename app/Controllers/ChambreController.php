@@ -59,7 +59,7 @@ class ChambreController extends BaseController
                 'statut' => $this->request->getPost('statut'),
             ]);
 
-            session()->setFlashData('chambres_create_success', 'Chambre ajouté avec succès');
+            session()->setFlashData('flash_operation_success', 'Chambre ajouté avec succès');
 
             // echo view('chambres/success');
             return redirect()->route('chambres.index');
@@ -106,19 +106,41 @@ class ChambreController extends BaseController
             ];
             $id = $this->request->getPost('id');
             $model->update($id, $data);
-            /* $model->save([
-                'numero' => $this->request->getPost('numero'),
-                'site' => $this->request->getPost('site'),
-                'statut' => $this->request->getPost('statut'),
-            ]); */
 
-            session()->setFlashData('chambres_update_success', 'Chambre edité avec succès');
+            session()->setFlashData('flash_operation_success', 'Chambre edité avec succès');
 
-            // echo view('chambres/success');
             return redirect()->route('chambres.index');
         } else {
             // afficher la vue du formulaire si le formulaire n'est pas bien rempli
             return $this->update();
         }
+    }
+
+    /**
+     * Vue pour supprimer un objet
+     */
+    public function delete_view()
+    {
+        $model = model(Obj::class);
+        $obj = $model->get($this->request->getGet('id'));
+
+        $data = [
+            'title' => 'Supprimer une chambre',
+            'obj' => $obj
+        ];
+        return view('chambres/delete', $data);
+    }
+
+    /**
+     * Supprimer un objet de la bd
+     */
+    public function delete()
+    {
+        $model = model(Obj::class);
+        $model->delete($this->request->getGet('id'));
+
+        session()->setFlashData('flash_operation_success', 'Chambre supprimé avec succès');
+
+        return redirect()->route('chambres.index');
     }
 }
