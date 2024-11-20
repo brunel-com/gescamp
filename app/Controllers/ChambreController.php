@@ -75,7 +75,7 @@ class ChambreController extends BaseController
             return redirect()->route('chambres.index');
         } else {
             // afficher la vue du formulaire si le formulaire n'est pas bien rempli
-            return $this->create();
+            return $this->create_view();
         }
     }
 
@@ -122,7 +122,7 @@ class ChambreController extends BaseController
             return redirect()->route('chambres.index');
         } else {
             // afficher la vue du formulaire si le formulaire n'est pas bien rempli
-            return $this->update();
+            return $this->update_view();
         }
     }
 
