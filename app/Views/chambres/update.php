@@ -15,7 +15,7 @@
                 <div class="card-body p-4">
                     <form action="/chambres/update" method="post">
                         <?= csrf_field() ?>
-                        <input type="hidden" name='id' value="<?= esc($obj['id'])?>" />
+                        <input type="hidden" name='id' value="<?= esc($obj['id']) ?>" />
 
                         <div class="mb-3">
                             <label for="numero" class="form-label">Numéro</label>
@@ -30,7 +30,7 @@
                             <select class="form-select" id="site" name="site" value="<?= esc($obj['site']) ?>" required>
                                 <option disabled value="">Choisir Site...</option>
                                 <?php foreach ($sites as $site): ?>
-                                    <?php if($obj['site'] == $site['label']): ?>
+                                    <?php if ($obj['site'] == $site['label']): ?>
                                         <option selected value="<?= esc($site['label']) ?>"><?= esc($site['label']) ?></option>
                                     <?php else: ?>
                                         <option value="<?= esc($site['label']) ?>"><?= esc($site['label']) ?></option>
@@ -42,17 +42,12 @@
                             <label for="statut" class="form-label">Statut</label>
                             <select class="form-select" id="statut" name="statut" required>
                                 <option disabled value="">Statut...</option>
-                                <?php if($obj['statut'] == 'disponible'): ?>
-                                    <option selected value="disponible">Disponible</option>
-                                    <option value="occupe">Occupé</option>
-                                <?php elseif($obj['statut'] == 'occupe'): ?>
-                                    <option value="disponible">Disponible</option>
-                                    <option selected value="occupe">Occupé</option>
-                                <?php endif ?>
+                                <option <?= $obj['statut'] == 'DISPONIBLE' ? 'selected' : '' ?> value="DISPONIBLE">Disponible</option>
+                                <option <?= $obj['statut'] == 'OCCUPE' ? 'selected' : '' ?> value="OCCUPE">Occupé</option>
                             </select>
                         </div>
                         <div class="d-flex justify-content-end">
-                            <button type="button" class="btn btn-link text-danger me-2" data-bs-toggle="modal" data-bs-target="#cancelModal">Cancel</button>
+                            <button type="button" class="btn btn-danger me-2" onclick="window.history.back()">Annuler</button>
                             <button type="submit" class="btn btn-primary">Enregistrer</button>
                         </div>
                     </form>

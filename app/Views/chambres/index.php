@@ -10,8 +10,8 @@
     </a>
 </div>
 
-<table id="roomsTable" class="table table-hover border rounded">
-    <thead>
+<table class="table table-hover border rounded align-middle">
+    <thead class="table-light">
         <tr>
             <th>Numéro</th>
             <th>Site</th>
@@ -26,7 +26,7 @@
             <tr>
                 <td><?= esc($obj['numero']) ?></td>
                 <td><?= esc($obj['site']) ?></td>
-                <td><?= esc($obj['statut']) ?></td>
+                <td><span class="tag <?= $obj['statut'] == 'DISPONIBLE' ? 'bg-success' : 'bg-danger' ?>"> <?= esc($obj['statut']) ?></span></td>
                 <td>
                     <div class="d-flex gap-2">
                         <a href='/chambres/update?id=<?= esc($obj['id']) ?>' class='btn btn-outline-warning rounded-circle btn-sm'>

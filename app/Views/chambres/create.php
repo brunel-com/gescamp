@@ -37,12 +37,12 @@
                             <label for="statut" class="form-label">Statut</label>
                             <select class="form-select" id="statut" name="statut" required>
                                 <option disabled value="">Statut...</option>
-                                <option value="disponible">Disponible</option>
-                                <!-- <option value="occupe">Occupé</option> -->
+                                <option value="DISPONIBLE">Disponible</option>
+                                <!-- <option value="OCCUPE">Occupé</option> -->
                             </select>
                         </div>
                         <div class="d-flex justify-content-end">
-                            <button type="button" class="btn btn-link text-danger me-2" data-bs-toggle="modal" data-bs-target="#cancelModal">Cancel</button>
+                            <button type="button" class="btn btn-link text-danger me-2" onclick="window.history.back()">Annuler</button>
                             <button type="submit" class="btn btn-primary">Enregistrer</button>
                         </div>
                     </form>

@@ -34,7 +34,7 @@ $routes->get('/chambres/create', 'ChambreController::create_view', ['as' => 'cha
 $routes->post('/chambres/create', 'ChambreController::create', ['as' => 'chambres.create']);
 $routes->get('/chambres/update', 'ChambreController::update_view', ['as' => 'chambres.update_view']);
 $routes->post('/chambres/update', 'ChambreController::update', ['as' => 'chambres.update']);
-$routes->get('/chambres/delete', 'ChambreController::delete', ['as' => 'chambres.delete_view']);
+$routes->get('/chambres/delete', 'ChambreController::delete_view', ['as' => 'chambres.delete_view']);
 $routes->post('/chambres/delete', 'ChambreController::delete', ['as' => 'chambres.delete']);
 
 /**

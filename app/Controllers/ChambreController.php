@@ -59,20 +59,9 @@ class ChambreController extends BaseController
                 'statut' => $this->request->getPost('statut'),
             ]);
 
-            /* $siteModel = model(Site::class);
-            $site = $siteModel->where('label', $this->request->getPost('site'))->first();
-            $chambres = $site['chambres'];
-            if (!empty($chambres)) {
-                $chambres = $chambres . ','. $this->request->getPost('numero');
-            } else {
-                $chambres = $this->request->getPost('numero');
-            }
-            $siteModel->update($site['id'], ['chambres' => $chambres]); */
-
             session()->setFlashData('flash_operation_success', 'Chambre ajouté avec succès');
 
-            // echo view('chambres/success');
-            return redirect()->route('chambres.index');
+            return redirect()->to('/chambres');
         } else {
             // afficher la vue du formulaire si le formulaire n'est pas bien rempli
             return $this->create_view();
@@ -119,7 +108,7 @@ class ChambreController extends BaseController
 
             session()->setFlashData('flash_operation_success', 'Chambre edité avec succès');
 
-            return redirect()->route('chambres.index');
+            return redirect()->to('/chambres');
         } else {
             // afficher la vue du formulaire si le formulaire n'est pas bien rempli
             return $this->update_view();
@@ -147,10 +136,10 @@ class ChambreController extends BaseController
     public function delete()
     {
         $model = model(Obj::class);
-        $model->delete($this->request->getGet('id'));
+        $model->delete($this->request->getPost('id'));
 
         session()->setFlashData('flash_operation_success', 'Chambre supprimé avec succès');
 
-        return redirect()->route('chambres.index');
+        return redirect()->to('/chambres');
     }
 }
