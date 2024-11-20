@@ -40,6 +40,9 @@ class EquipementController extends BaseController
         ])) {
 
             $obj->create($this->request->getPost());
+
+            session()->setFlashData('flash_operation_success', 'success');
+
             return redirect()->to('/equipements');
         } else {
             return $this->create_view();
@@ -71,6 +74,9 @@ class EquipementController extends BaseController
             'quantite' => 'required|min_length[1]',
         ])) {
             $obj->update($this->request->getPost('id'), $this->request->getPost());
+
+            session()->setFlashData('flash_operation_success', 'success');
+
             return redirect()->to('/equipements');
         } else {
             return $this->update_view();
@@ -96,6 +102,9 @@ class EquipementController extends BaseController
     {
         $obj = model(Obj::class);
         $obj->delete($this->request->getPost('id'));
+
+        session()->setFlashData('flash_operation_success', 'success');
+
         return redirect()->to('/equipements');
     }
 }
