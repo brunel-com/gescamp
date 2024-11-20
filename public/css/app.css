@@ -91,11 +91,11 @@ thead {
 }
 
 .badge {
-  width: 2.5rem;
-  height: 2.5rem;
+  width: 2.3rem;
+  height: 2.3rem;
   display: inline-flex;
   justify-content: center;
   align-items: center;
   font-size: 1rem;
-  font-weight: 600;
+  font-weight: 300;
 }

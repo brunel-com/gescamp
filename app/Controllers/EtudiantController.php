@@ -1,6 +1,7 @@
 <?php
 namespace App\Controllers;
 
+use App\Models\Chambre;
 use App\Models\Etudiant as Obj;
 
 class EtudiantController extends BaseController
@@ -18,8 +19,11 @@ class EtudiantController extends BaseController
 
     public function create_view()
     {
+        $chambreModel = model(Chambre::class);
+        $chambres = $chambreModel->getAll();
         $data = [
             'title' => 'Ajouter un étudiant',
+            'chambres' => $chambres
         ];
         return view('etudiants/create', $data);
     }
@@ -30,9 +34,9 @@ class EtudiantController extends BaseController
         if ($this->validate([
             'nom' => 'required|min_length[3]|max_length[100]',
             'prenom' => 'required|min_length[3]|max_length[100]',
-            'classe' => 'required|min_length[3]|max_length[30]',
-            'filiere' => 'required|min_length[3]|max_length[30]',
-            'cycle' => 'required|min_length[3]|max_length[10]',
+            'classe' => 'required|min_length[1]|max_length[30]',
+            'filiere' => 'required|min_length[1]|max_length[30]',
+            'cycle' => 'required|min_length[1]|max_length[10]',
         ])) {
 
             $obj->create($this->request->getPost());
@@ -45,8 +49,12 @@ class EtudiantController extends BaseController
     public function update_view()
     {
         $model = new Obj();
+        $chambreModel = model(Chambre::class);
+
         $obj = $model->get($this->request->getGet('id'));
+        $chambres = $chambreModel->getAll();
         $data = [
+            'chambres' => $chambres,
             'obj' => $obj,
             'title' => 'Éditer étudiant ' . $obj['nom'] . ' ' . $obj['prenom'],
         ];
@@ -59,9 +67,9 @@ class EtudiantController extends BaseController
         if ($this->validate([
             'nom' => 'required|min_length[3]|max_length[100]',
             'prenom' => 'required|min_length[3]|max_length[100]',
-            'classe' => 'required|min_length[3]|max_length[30]',
-            'filiere' => 'required|min_length[3]|max_length[30]',
-            'cycle' => 'required|min_length[3]|max_length[10]',
+            'classe' => 'required|min_length[1]|max_length[30]',
+            'filiere' => 'required|min_length[1]|max_length[30]',
+            'cycle' => 'required|min_length[1]|max_length[10]',
         ])) {
             $id = $this->request->getPost('id');
             $model->update($id, $this->request->getPost());

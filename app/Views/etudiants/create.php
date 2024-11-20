@@ -58,7 +58,9 @@
                             <label for="roomNumber" class="form-label">Chambre</label>
                             <select class="form-select" id="chambre" name="chambre">
                                 <option selected disabled>Assigner une chambre...</option>
-                                <option value="DUT">EX Chambre</option>
+                                <?php foreach ($chambres as $chambre): ?>
+                                    <option value="<?= esc($chambre['numero']) ?>">Chambre <?= esc($chambre['numero']) ?></option>
+                                <?php endforeach ?>
                             </select>
                         </div>
 

@@ -35,8 +35,9 @@ CREATE TABLE equipements
     id INT UNSIGNED PRIMARY KEY NOT NULL AUTO_INCREMENT,
     type VARCHAR(100),
     etat VARCHAR(100) DEFAULT 'bon',
-    id_chambre INT UNSIGNED NULL,
-    FOREIGN KEY(id_chambre) REFERENCES chambres(id)
+    chambre VARCHAR(50),
+    quantite SMALLINT UNSIGNED DEFAULT 1,
+    FOREIGN KEY(chambre) REFERENCES chambres(numero),
 );
 
 CREATE TABLE sites
