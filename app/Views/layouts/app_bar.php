@@ -70,8 +70,8 @@
         text-decoration: none;
     }
 
-    .breadcrumb-item.active {
-        color: #6c757d;
+    .breadcrumb-item a.active {
+        color: #6c757d!important;
     }
 </style>
 
@@ -110,8 +110,8 @@
     <div class="container">
         <nav aria-label="breadcrumb">
             <ol class="breadcrumb mb-0">
-                <li class="breadcrumb-item"><a href="#">Accueil</a></li>
-                <li class="breadcrumb-item active"><a href="#">Chambres</a></li>
+                <li class="breadcrumb-item"><a href="<?= esc(base_url()) ?>">Accueil</a></li>
+                <li class="breadcrumb-item active" aria-current="page"><a class="active" href="<?= esc(current_url()) ?>"><?= ucfirst(uri_string()) ?></a></li>
                 <!-- <li class="breadcrumb-item active" aria-current="page">Data</li> -->
             </ol>
         </nav>
