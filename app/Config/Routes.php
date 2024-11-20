@@ -42,3 +42,5 @@ $routes->post('/chambres/delete', 'ChambreController::delete', ['as' => 'chambre
  * 
  */
 $routes->get('/etudiants', 'EtudiantController::index', ['as' => 'etudiants.index']);
+$routes->get('/etudiants/create', 'EtudiantController::create_view', ['as' => 'etudiants.create_view']);
+$routes->post('/etudiants/create', 'EtudiantController::create', ['as' => 'etudiants.create']);

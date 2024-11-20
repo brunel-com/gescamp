@@ -3,7 +3,7 @@
 <?= $this->section('content') ?>
 <div class="d-flex justify-content-between mb-3">
     <h4><?= esc($title) ?></h4>
-    <a href="/sites/create" class="btn btn-primary">
+    <a href="/etudiants/create" class="btn btn-primary">
         <i class="bi bi-plus-circle"></i> Ajouter
     </a>
 </div>
