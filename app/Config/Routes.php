@@ -2,6 +2,12 @@
 
 use CodeIgniter\Router\RouteCollection;
 
+
+/**
+ * Authentification - Login et Register
+ */
+service('auth')->routes($routes);
+
 /**
  * @var RouteCollection $routes
  */
@@ -31,11 +37,8 @@ $routes->post('/chambres/update', 'ChambreController::update', ['as' => 'chambre
 $routes->get('/chambres/delete', 'ChambreController::delete', ['as' => 'chambres.delete_view']);
 $routes->post('/chambres/delete', 'ChambreController::delete', ['as' => 'chambres.delete']);
 
-
 /**
- * User
+ * Feature etudiant
+ * 
  */
-// $routes->get('/login', 'UserController::login_view', ['as' => 'auth.login_view']);
-
-service('auth')->routes($routes);
-// $routes->post('/login', 'UserController::login', ['as' => 'auth.login']);
+$routes->get('/etudiants', 'EtudiantController::index', ['as' => 'etudiants.index']);

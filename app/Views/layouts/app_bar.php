@@ -98,6 +98,9 @@
                     <a class="nav-link" href="/chambres">Chambres</a>
                 </li>
                 <li class="nav-item">
+                    <a class="nav-link" href="/etudiants">Etudiants</a>
+                </li>
+                <li class="nav-item">
                     <form action="/logout" method="get">
                         <button type="submit" class="btn btn-danger" href="#">Se déconnecter</button>
                     </form>
