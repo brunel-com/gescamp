@@ -6,7 +6,7 @@ CREATE TABLE users
     role VARCHAR(30),
     email VARCHAR(100),
     password VARCHAR(200)
-)
+);
 
 CREATE TABLE chambres
 (
@@ -27,7 +27,7 @@ CREATE TABLE etudiants
     cycle VARCHAR(10) DEFAULT NULL,
     id_chambre INT UNSIGNED NULL,
     FOREIGN KEY(id_chambre) REFERENCES chambres(id)
-)
+);
 
 CREATE TABLE equipements
 (
@@ -36,11 +36,11 @@ CREATE TABLE equipements
     etat VARCHAR(100) DEFAULT 'bon',
     id_chambre INT UNSIGNED NULL,
     FOREIGN KEY(id_chambre) REFERENCES chambres(id)
-)
+);
 
 CREATE TABLE sites
 (
     id INT UNSIGNED PRIMARY KEY NOT NULL AUTO_INCREMENT,
     chambres VARCHAR(200),
     label VARCHAR(100)
-)
+);
