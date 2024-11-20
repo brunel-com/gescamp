@@ -1,1 +1,0 @@
-<h3>L'opération s'est déroulée avec succès</h3>
