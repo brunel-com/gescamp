@@ -25,7 +25,7 @@ CREATE TABLE etudiants
     classe VARCHAR(30),
     filiere VARCHAR(30) DEFAULT NULL,
     cycle VARCHAR(10) DEFAULT NULL,
-    id_chambre INT,
+    id_chambre INT UNSIGNED NULL,
     FOREIGN KEY(id_chambre) REFERENCES chambres(id)
 )
 
@@ -34,7 +34,7 @@ CREATE TABLE equipements
     id INT UNSIGNED PRIMARY KEY NOT NULL AUTO_INCREMENT,
     type VARCHAR(100),
     etat VARCHAR(100) DEFAULT 'bon',
-    id_chambre INT,
+    id_chambre INT UNSIGNED NULL,
     FOREIGN KEY(id_chambre) REFERENCES chambres(id)
 )
 
