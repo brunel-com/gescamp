@@ -36,12 +36,14 @@
                 <td><?= esc($obj['cycle']) ?></td>
                 <td><?= esc($obj['chambre']) ?></td>
                 <td>
-                    <a href="/etudiants/update?id=<?= esc($obj['id']) ?>" class="btn btn-sm btn-primary">
-                        <i class="bi bi-pencil-square"></i>
-                    </a>
-                    <a href="/etudiants/delete?id=<?= esc($obj['id']) ?>" class="btn btn-sm btn-danger">
-                        <i class="bi bi-trash"></i>
-                    </a>
+                    <div class="d-flex gap-2">
+                        <a href='/etudiants/update?id=<?= esc($obj['id']) ?>' class='btn btn-outline-warning rounded-circle btn-sm'>
+                            <i class='bi bi-pencil'></i>
+                        </a>
+                        <a href='/etudiants/delete?id=<?= esc($obj['id']) ?>' class='btn btn-outline-danger rounded-circle btn-sm'>
+                            <i class='bi bi-trash'></i>
+                        </a>
+                    </div>
                 </td>
             </tr>
         <?php endforeach ?>

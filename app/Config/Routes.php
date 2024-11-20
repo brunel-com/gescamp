@@ -46,3 +46,5 @@ $routes->get('/etudiants/create', 'EtudiantController::create_view', ['as' => 'e
 $routes->post('/etudiants/create', 'EtudiantController::create', ['as' => 'etudiants.create']);
 $routes->get('/etudiants/update', 'EtudiantController::update_view', ['as' => 'etudiants.update_view']);
 $routes->post('/etudiants/update', 'EtudiantController::update', ['as' => 'etudiants.update']);
+$routes->get('/etudiants/delete', 'EtudiantController::delete_view', ['as' => 'etudiants.delete_view']);
+$routes->post('/etudiants/delete', 'EtudiantController::delete', ['as' => 'etudiants.delete']);

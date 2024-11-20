@@ -7,8 +7,8 @@ class EtudiantController extends BaseController
 {
     public function index()
     {
-        $obj = new Obj();
-        $objList = $obj->getAll();
+        $model = model(Obj::class);
+        $objList = $model->getAll();
         $data = [
             'objList' => $objList,
             'title' => 'Liste des étudiants',
@@ -71,10 +71,25 @@ class EtudiantController extends BaseController
         }
     }
 
-    public function delete($id)
+    /**
+     * Vue pour supprimer un objet
+     */
+    public function delete_view()
     {
-        $obj = new Obj();
-        $obj->delete($id);
-        return redirect()->to('/etudiant');
+        $model = model(Obj::class);
+        $obj = $model->get($this->request->getGet('id'));
+
+        $data = [
+            'title' => 'Supprimer  l\'étudiant ' . $obj['nom'] . ' ' . $obj['prenom'],
+            'obj' => $obj
+        ];
+        return view('etudiants/delete', $data);
+    }
+
+    public function delete()
+    {
+        $obj = model(Obj::class);
+        $obj->delete($this->request->getPost('id'));
+        return redirect()->to('/etudiants');
     }
 }   
