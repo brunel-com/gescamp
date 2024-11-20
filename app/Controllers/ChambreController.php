@@ -138,7 +138,7 @@ class ChambreController extends BaseController
         $model = model(Obj::class);
         $model->delete($this->request->getPost('id'));
 
-        session()->setFlashData('flash_operation_success', 'Chambre supprimé avec succès');
+        session()->setFlashData('flash_operation_success', 'Chambre supprimée avec succès');
 
         return redirect()->to('/chambres');
     }

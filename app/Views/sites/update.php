@@ -19,7 +19,11 @@
                             <label for="label" class="form-label">Label</label>
                             <input type="text" class="form-control" id="label" name="label" value="<?= esc($obj['label']) ?>" placeholder="Ex: Site A, Site B,..." required>
                         </div>
-                        <button type="submit" class="btn btn-primary">Enregistrer</button>
+
+                        <div class="d-flex justify-content-end">
+                            <button type="button" class="btn btn-link text-danger me-2" onclick="window.history.back()">Annuler</button>
+                            <button type="submit" class="btn btn-primary">Enregistrer</button>
+                        </div>
                     </form>
                 </div>
             </div>

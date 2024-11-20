@@ -10,8 +10,8 @@
     </a>
 </div>
 
-<table id="roomsTable" class="table table-hover border rounded">
-    <thead>
+<table class="table table-hover border rounded align-middle">
+    <thead class="table-light">
         <tr>
             <th>Label</th>
             <th>Chambres</th>

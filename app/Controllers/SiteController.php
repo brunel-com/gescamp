@@ -65,7 +65,7 @@ class SiteController extends BaseController
 
             session()->setFlashData('flash_operation_success', 'success');
 
-            return redirect()->route('sites.index');
+            return redirect()->to('/sites');
         } else {
             // afficher la vue du formulaire si le formulaire n'est pas bien rempli
             return $this->create_view();
@@ -113,7 +113,7 @@ class SiteController extends BaseController
 
             session()->setFlashData('flash_operation_success', 'success');
 
-            return redirect()->route('sites.index');
+            return redirect()->to('/sites');
         } else {
             // afficher la vue du formulaire si le formulaire n'est pas bien rempli
             return $this->update_view();
@@ -132,7 +132,7 @@ class SiteController extends BaseController
             'title' => 'Supprimer  ' . $obj['label'],
             'obj' => $obj
         ];
-        return view('chambres/delete', $data);
+        return view('sites/delete', $data);
     }
 
     /**
@@ -141,11 +141,11 @@ class SiteController extends BaseController
     public function delete()
     {
         $model = model(Obj::class);
-        $model->delete($this->request->getGet('id'));
+        $model->delete($this->request->getPost('id'));
 
-        session()->setFlashData('flash_operation_success', 'Chambre supprimé avec succès');
+        session()->setFlashData('flash_operation_success', 'Site supprimé avec succès');
 
-        return redirect()->route('sites.index');
+        return redirect()->to('/sites');
     }
     
 }
