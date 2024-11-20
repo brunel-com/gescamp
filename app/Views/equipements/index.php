@@ -22,7 +22,7 @@
         <?php foreach ($objList as $obj): ?>
             <tr>
                 <td><?= esc($obj['type']) ?></td>
-                <td><?= esc($obj['etat']) ?></td>
+                <td><span class="tag <?= $obj['etat'] == 'BON' ? 'bg-success' : 'bg-danger' ?>"> <?= esc($obj['etat']) ?></span></td>
                 <td><?= esc($obj['chambre']) ?></td>
                 <td><?= esc($obj['quantite']) ?></td>
                 <td>
