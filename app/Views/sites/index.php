@@ -25,15 +25,14 @@
                 <td><?= esc($obj['label']) ?></td>
                 <td>Chambres: <?= esc($obj['chambres']) ?></td>
                 <td>
-                    <button type="button" class="btn btn-link p-0" data-bs-toggle="popover" data-bs-html="true" data-bs-content="
-                            <a href='/sites/update?id=<?= esc($obj['id']) ?>' class='btn btn-outline-warning btn-sm w-100 mb-2'>
-                                <i class='bi bi-pencil'></i> Modifier
-                            </a>
-                            <a href='/sites/delete?id=<?= esc($obj['id']) ?>' class='btn btn-outline-danger btn-sm w-100'>
-                                <i class='bi bi-trash'></i> Supprimer
-                            </a>">
-                        <i class="bi bi-three-dots"></i>
-                    </button>
+                    <div class="d-flex gap-2">
+                        <a href='/sites/update?id=<?= esc($obj['id']) ?>' class='btn btn-outline-warning rounded-circle btn-sm'>
+                            <i class='bi bi-pencil'></i>
+                        </a>
+                        <a href='/sites/delete?id=<?= esc($obj['id']) ?>' class='btn btn-outline-danger rounded-circle btn-sm'>
+                            <i class='bi bi-trash'></i>
+                        </a>
+                    </div>
                 </td>
             </tr>
         <?php endforeach ?>
