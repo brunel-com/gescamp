@@ -3,7 +3,7 @@
 <?= $this->section('content') ?>
 
 <div class="container py-5">
-  <h2 class="text-center mb-4">Supprimer la chambre numéro <?= esc($obj['numero']) ?></h2>
+  <h2 class="text-center mb-4"><?= esc($title) ?></h2>
   <div class="col-md-5">
     <div class="card shadow-sm">
       <form action="/chambres/delete" method="post" class="card-body">

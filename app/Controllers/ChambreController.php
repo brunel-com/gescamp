@@ -105,7 +105,7 @@ class ChambreController extends BaseController
     {
         $model = model(Obj::class);
         if ($this->validate([
-            'numero' => 'required|min_length[3]|max_length[10]',
+            'numero' => 'required|min_length[3]|max_length[50]',
             'site' => 'required',
             'statut' => 'required',
         ])) {
@@ -135,7 +135,7 @@ class ChambreController extends BaseController
         $obj = $model->get($this->request->getGet('id'));
 
         $data = [
-            'title' => 'Supprimer une chambre',
+            'title' => 'Supprimer chambre numéro ' . $obj['numero'],
             'obj' => $obj
         ];
         return view('chambres/delete', $data);
