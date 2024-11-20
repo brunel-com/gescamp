@@ -48,3 +48,8 @@ $routes->get('/etudiants/update', 'EtudiantController::update_view', ['as' => 'e
 $routes->post('/etudiants/update', 'EtudiantController::update', ['as' => 'etudiants.update']);
 $routes->get('/etudiants/delete', 'EtudiantController::delete_view', ['as' => 'etudiants.delete_view']);
 $routes->post('/etudiants/delete', 'EtudiantController::delete', ['as' => 'etudiants.delete']);
+
+/**
+ * Feature equipements
+ */
+$routes->get('/equipements', 'EquipementController::index', ['as' => 'equipements.index']);

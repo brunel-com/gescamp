@@ -34,10 +34,11 @@ CREATE TABLE equipements
 (
     id INT UNSIGNED PRIMARY KEY NOT NULL AUTO_INCREMENT,
     type VARCHAR(100),
-    etat VARCHAR(100) DEFAULT 'bon',
+    etat VARCHAR(100) DEFAULT 'Bon',
     chambre VARCHAR(50),
     quantite SMALLINT UNSIGNED DEFAULT 1,
-    FOREIGN KEY(chambre) REFERENCES chambres(numero),
+    CONSTRAINT uq_equipement UNIQUE(type,chambre),
+    FOREIGN KEY(chambre) REFERENCES chambres(numero)
 );
 
 CREATE TABLE sites
