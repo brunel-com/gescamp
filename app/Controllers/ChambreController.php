@@ -59,6 +59,16 @@ class ChambreController extends BaseController
                 'statut' => $this->request->getPost('statut'),
             ]);
 
+            /* $siteModel = model(Site::class);
+            $site = $siteModel->where('label', $this->request->getPost('site'))->first();
+            $chambres = $site['chambres'];
+            if (!empty($chambres)) {
+                $chambres = $chambres . ','. $this->request->getPost('numero');
+            } else {
+                $chambres = $this->request->getPost('numero');
+            }
+            $siteModel->update($site['id'], ['chambres' => $chambres]); */
+
             session()->setFlashData('flash_operation_success', 'Chambre ajouté avec succès');
 
             // echo view('chambres/success');
