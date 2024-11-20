@@ -91,7 +91,7 @@ class ChambreController extends BaseController
         $obj = $model->get($_GET['id']);
 
         $data = [
-            'title' => 'Éditer une chambre',
+            'title' => 'Éditer chambre numéro ' . $obj['numero'],
             'sites' => $sites,
             'obj' => $obj
         ];

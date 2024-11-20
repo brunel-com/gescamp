@@ -6,7 +6,7 @@
 
 <!-- Container for the Add Room Page -->
 <div class="container py-5">
-    <h2 class="text-center mb-4">Modifier Chambre <?= esc($obj['numero']) ?></h2>
+    <h2 class="text-center mb-4"><?= esc($title) ?></h2>
 
     <!-- Add Room Form -->
     <div class="row justify-content-center">
