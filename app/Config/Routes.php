@@ -35,5 +35,7 @@ $routes->post('/chambres/delete', 'ChambreController::delete', ['as' => 'chambre
 /**
  * User
  */
-$routes->get('/login', 'UserController::login_view', ['as' => 'auth.login_view']);
-$routes->post('/login', 'UserController::login', ['as' => 'auth.login']);
+// $routes->get('/login', 'UserController::login_view', ['as' => 'auth.login_view']);
+
+service('auth')->routes($routes);
+// $routes->post('/login', 'UserController::login', ['as' => 'auth.login']);

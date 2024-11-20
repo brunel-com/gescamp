@@ -2,7 +2,7 @@
 
 namespace App\Controllers;
 
-class UserControllers extends BaseController
+class UserController extends BaseController
 {
     public function index()
     {
