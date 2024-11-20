@@ -12,6 +12,21 @@ document.addEventListener('DOMContentLoaded', function () {
         });
     });
 
+    const successAlert = document.getElementById('app-success-alert')
+    const errorAlert = document.getElementById('app-error-alert')
+
+    if (successAlert) {
+        setTimeout(() => {
+            successAlert.classList.add('d-none')
+        }, 4000)
+    }
+
+    if (errorAlert) {
+        setTimeout(() => {
+            errorAlert.classList.add('d-none')
+        }, 4000)
+    }
+
     // Initialize DataTables for the table with pagination and search features
     /* const roomsTable = document.getElementById("roomsTable");
     if (roomsTable) {
@@ -41,15 +56,15 @@ document.addEventListener('DOMContentLoaded', function () {
         if (addRoomForm) {
             addRoomForm.addEventListener('submit', function (event) {
                 event.preventDefault();
-        
+
                 const roomNumber = document.getElementById('roomNumber').value;
                 const roomType = document.getElementById('roomType').value;
                 const roomCapacity = document.getElementById('roomCapacity').value;
                 const roomStatus = document.getElementById('roomStatus').value;
-        
+
                 // Logic to save the room data (could be sending to server, or adding to table)
                 console.log('Room Added:', { roomNumber, roomType, roomCapacity, roomStatus });
-        
+
                 // Close modal after saving
                 const modal = bootstrap.Modal.getInstance(document.getElementById('addRoomModal'));
                 modal.hide();
@@ -62,7 +77,7 @@ document.addEventListener('DOMContentLoaded', function () {
                 addRoomModal.show();
             });
         });
-    
+
         // Handle "Delete" button click to open Delete Room Modal
         document.querySelectorAll('#deleteRoomBtn').forEach(button => {
             button.addEventListener('click', function () {
@@ -70,12 +85,12 @@ document.addEventListener('DOMContentLoaded', function () {
                 deleteRoomModal.show();
             });
         });
-    
+
         // Handle confirmation of room deletion
         document.getElementById('confirmDeleteBtn').addEventListener('click', function () {
             // Logic to delete the room, such as making a request to delete the room from the database
             console.log("Room deleted");
-    
+
             // Close the modal after confirmation
             const deleteRoomModal = new bootstrap.Modal(document.getElementById('deleteRoomModal'));
             deleteRoomModal.hide();

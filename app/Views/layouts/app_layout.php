@@ -13,6 +13,20 @@
 
 <body>
 
+    <?php if (session()->has('flash_operation_success')): ?>
+        <div id="app-success-alert" class="app-alert alert alert-success alert-dismissible fade show" role="alert">
+            Opération effectuée avec succès
+            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+        </div>
+    <?php endif ?>
+
+    <?php if (session()->has('flash_operation_error')): ?>
+        <div id="app-error-alert" class="app-alert alert alert-danger alert-dismissible fade show" role="alert">
+            Erreur lors de l'opération
+            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+        </div>
+    <?php endif ?>
+
     <?= $this->include('layouts/app_bar') ?>
 
     <main class="container mt-4">
@@ -22,8 +36,8 @@
     <footer class="container mt-5">
         <em>&copy; Footer Brunel.com 2024</em>
     </footer>
-     <!-- jQuery (required for DataTables) -->
-     <!-- <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script> -->
+    <!-- jQuery (required for DataTables) -->
+    <!-- <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script> -->
     <!-- DataTables JS -->
     <!-- <script src="https://cdn.jsdelivr.net/npm/datatables.net/js/jquery.dataTables.min.js"></script> -->
     <script src="/lib/bootstrap-5.3.3-dist/js/bootstrap.bundle.min.js"></script>

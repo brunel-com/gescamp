@@ -79,3 +79,13 @@ thead {
     margin: 1rem;
   }
 }
+
+.app-alert {
+  position: fixed;
+  top: 0 !important;
+  right: 0 !important;
+  margin: 2rem!important;
+  margin-top: 3rem!important;
+  width: fit-content;
+  z-index: 9999;
+}
