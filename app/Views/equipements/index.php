@@ -21,11 +21,6 @@
     <tbody>
         <?php foreach ($objList as $obj): ?>
             <tr>
-                <td>
-                    <span class="badge bg-primary rounded-circle p-3 text-white">
-                        <?= esc(ucfirst($obj['nom'][0]) . ucfirst($obj['prenom'][0])) ?>
-                    </span>
-                </td>
                 <td><?= esc($obj['type']) ?></td>
                 <td><?= esc($obj['etat']) ?></td>
                 <td><?= esc($obj['chambre']) ?></td>

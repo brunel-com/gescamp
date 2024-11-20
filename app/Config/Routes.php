@@ -53,3 +53,5 @@ $routes->post('/etudiants/delete', 'EtudiantController::delete', ['as' => 'etudi
  * Feature equipements
  */
 $routes->get('/equipements', 'EquipementController::index', ['as' => 'equipements.index']);
+$routes->get('/equipements/create', 'EquipementController::create_view', ['as' => 'equipements.create_view']);
+$routes->post('/equipements/create', 'EquipementController::create', ['as' => 'equipements.create']);

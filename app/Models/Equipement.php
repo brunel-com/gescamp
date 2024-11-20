@@ -8,7 +8,7 @@ class Equipement extends Model
 {
     protected $table = 'equipements';
     protected $primaryKey = 'id';
-    protected $allowedFields = ['type', 'etat', 'chambres', 'quantite'];
+    protected $allowedFields = ['type', 'etat', 'chambre', 'quantite'];
 
     public function getAll()
     {
