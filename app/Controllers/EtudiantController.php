@@ -35,25 +35,40 @@ class EtudiantController extends BaseController
             'cycle' => 'required|min_length[3]|max_length[10]',
         ])) {
 
-            $obj->insert($this->request->getPost());
+            $obj->create($this->request->getPost());
             return redirect()->route('etudiants.index');
         } else {
             return $this->create_view();
         }
     }
 
-    public function edit($id)
+    public function update_view()
     {
-        $obj = new Obj();
-        $data['etudiant'] = $obj->find($id);
+        $model = new Obj();
+        $obj = $model->get($this->request->getGet('id'));
+        $data = [
+            'obj' => $obj,
+            'title' => 'Éditer étudiant ' . $obj['nom'] . ' ' . $obj['prenom'],
+        ];
         return view('etudiants/update', $data);
     }
 
-    public function update($id)
+    public function update()
     {
-        $obj = new Obj();
-        $obj->update($id, $this->request->getPost());
-        return redirect()->to('/etudiant');
+        $model = model(Obj::class);
+        if ($this->validate([
+            'nom' => 'required|min_length[3]|max_length[100]',
+            'prenom' => 'required|min_length[3]|max_length[100]',
+            'classe' => 'required|min_length[3]|max_length[30]',
+            'filiere' => 'required|min_length[3]|max_length[30]',
+            'cycle' => 'required|min_length[3]|max_length[10]',
+        ])) {
+            $id = $this->request->getPost('id');
+            $model->update($id, $this->request->getPost());
+            return redirect()->route('etudiants.index');
+        } else {
+            return $this->update_view();
+        }
     }
 
     public function delete($id)
