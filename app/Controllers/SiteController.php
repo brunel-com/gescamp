@@ -120,5 +120,32 @@ class SiteController extends BaseController
         }
     }
 
+    /**
+     * Vue pour supprimer un objet
+     */
+    public function delete_view()
+    {
+        $model = model(Obj::class);
+        $obj = $model->get($this->request->getGet('id'));
+
+        $data = [
+            'title' => 'Supprimer  ' . $obj['label'],
+            'obj' => $obj
+        ];
+        return view('chambres/delete', $data);
+    }
+
+    /**
+     * Supprimer un objet de la bd
+     */
+    public function delete()
+    {
+        $model = model(Obj::class);
+        $model->delete($this->request->getGet('id'));
+
+        session()->setFlashData('flash_operation_success', 'Chambre supprimé avec succès');
+
+        return redirect()->route('sites.index');
+    }
     
 }
