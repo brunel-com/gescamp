@@ -14,7 +14,8 @@ $routes->get('/', 'HomeController::index');
 $routes->get('/sites', 'SiteController::index', ['as' => 'sites.index']);
 $routes->get('/sites/create', 'SiteController::create_view', ['as' => 'sites.create_view']);
 $routes->post('/sites/create', 'SiteController::create', ['as' => 'sites.create']);
-
+$routes->get('/sites/update', 'SiteController::update_view', ['as' => 'sites.update_view']);
+$routes->post('/sites/update', 'SiteController::update', ['as' => 'sites.update']);
 
 /**
  * Fonctionnalité chambres

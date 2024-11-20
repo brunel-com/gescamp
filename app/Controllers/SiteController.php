@@ -57,7 +57,7 @@ class SiteController extends BaseController
     {
         $model = model(Obj::class);
         if ($this->validate([
-            'label' => 'required|min_length[1]|max_length[50]',
+            'label' => 'required|min_length[3]|max_length[50]',
         ])) {
             $model->save([
                 'label' => $this->request->getPost('label'),
@@ -68,7 +68,55 @@ class SiteController extends BaseController
             return redirect()->route('sites.index');
         } else {
             // afficher la vue du formulaire si le formulaire n'est pas bien rempli
-            return $this->create();
+            return $this->create_view();
+        }
+    }
+
+    /**
+     *  Update view
+     */
+    public function update_view()
+    {
+        $siteModel = model(Obj::class);
+
+        $model = model(Obj::class);
+        $obj = $model->get($_GET['id']);
+
+        $data = [
+            'title' => 'Éditer ' . $obj['label'],
+            'obj' => $obj
+        ];
+        return view('sites/update', $data);
+    }
+
+    /**
+     * Update dans la BD
+     */
+    public function update()
+    {
+        $model = model(Obj::class);
+        $chambreModel = model(Chambre::class);
+        if ($this->validate([
+            'label' => 'required|min_length[3]|max_length[50]',
+        ])) {
+
+            $id = $this->request->getPost('id');
+            $obj = $model->get($id);
+            
+            $model->update($id, [
+                'label' => $this->request->getPost('label'),
+            ]);
+
+            // modifier les sites des chambres concernées
+            $chambreModel->where('site', $obj['label'])->set(['site' => $this->request->getPost('label')])->update();
+
+
+            session()->setFlashData('flash_operation_success', 'success');
+
+            return redirect()->route('sites.index');
+        } else {
+            // afficher la vue du formulaire si le formulaire n'est pas bien rempli
+            return $this->update_view();
         }
     }
 
