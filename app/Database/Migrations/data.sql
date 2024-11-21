@@ -27,7 +27,7 @@ CREATE TABLE etudiants
     filiere VARCHAR(30) DEFAULT NULL,
     cycle VARCHAR(10) DEFAULT NULL,
     chambre VARCHAR(50) NULL,
-    FOREIGN KEY(chambre) REFERENCES chambres(numero)
+    FOREIGN KEY(chambre) REFERENCES chambres(numero) ON UPDATE CASCADE
 );
 
 CREATE TABLE equipements
@@ -38,7 +38,7 @@ CREATE TABLE equipements
     chambre VARCHAR(50),
     quantite SMALLINT UNSIGNED DEFAULT 1,
     CONSTRAINT uq_equipement UNIQUE(type,chambre),
-    FOREIGN KEY(chambre) REFERENCES chambres(numero)
+    FOREIGN KEY(chambre) REFERENCES chambres(numero) ON UPDATE CASCADE
 );
 
 CREATE TABLE sites
