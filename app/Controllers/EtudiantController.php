@@ -41,6 +41,11 @@ class EtudiantController extends BaseController
 
             $obj->create($this->request->getPost());
 
+            if (!empty($this->request->getPost('chambre'))) {
+                $chambreModel = model(Chambre::class);
+                $chambreModel->update($this->request->getPost('chambre'), ['statut' => Chambre::STATUT_OCCUPEE]);
+            }
+
             session()->setFlashData('flash_operation_success', 'success');
 
             return redirect()->to('/etudiants');
@@ -76,6 +81,11 @@ class EtudiantController extends BaseController
         ])) {
             $id = $this->request->getPost('id');
             $model->update($id, $this->request->getPost());
+
+            if (!empty($this->request->getPost('chambre'))) {
+                $chambreModel = model(Chambre::class);
+                $chambreModel->update($this->request->getPost('chambre'), ['statut' => Chambre::STATUT_OCCUPEE]);
+            }
 
             session()->setFlashData('flash_operation_success', 'success');
 

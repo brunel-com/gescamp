@@ -43,7 +43,7 @@
                             <select class="form-select" id="statut" name="statut" required>
                                 <option disabled value="">Statut...</option>
                                 <option <?= $obj['statut'] == 'DISPONIBLE' ? 'selected' : '' ?> value="DISPONIBLE">Disponible</option>
-                                <option <?= $obj['statut'] == 'OCCUPE' ? 'selected' : '' ?> value="OCCUPE">Occupé</option>
+                                <option <?= $obj['statut'] == 'OCCUPEE' ? 'selected' : '' ?> value="OCCUPEE">Occupée</option>
                             </select>
                         </div>
                         <div class="d-flex justify-content-end">

@@ -8,6 +8,9 @@ class Chambre extends Model
     protected $table = 'chambres';
     protected $primaryKey = 'id';
 
+    const STATUT_DISPONIBLE = 'DISPONIBLE';
+    const STATUT_OCCUPEE = 'OCCUPEE';
+
     // les champs de la table qu'on peut edit lors des inserts et updates sur la db
     protected $allowedFields = ['id', 'statut', 'site', 'equipements', 'numero'];
 
