@@ -34,7 +34,7 @@
                             <select class="form-select" id="statut" name="statut" required>
                                 <option disabled value="">Statut...</option>
                                 <option value="DISPONIBLE">Disponible</option>
-                                <!-- <option value="OCCUPE">Occupé</option> -->
+                                <option value="OCCUPEE">Occupée</option>
                             </select>
                         </div>
                         <div class="d-flex justify-content-end">
