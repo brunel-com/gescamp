@@ -25,7 +25,7 @@
         <?php foreach ($objList as $obj): ?>
             <tr>
                 <td>
-                    <span class="badge bg-primary rounded-circle p-3 text-white">
+                    <span class="badge rounded-circle p-3">
                         <?= esc(ucfirst($obj['nom'][0]) . ucfirst($obj['prenom'][0])) ?>
                     </span>
                 </td>
