@@ -3,6 +3,8 @@
 namespace App\Controllers;
 
 use App\Models\Chambre as Obj;
+use App\Models\Equipement;
+use App\Models\Etudiant;
 use App\Models\Site;
 
 class ChambreController extends BaseController
@@ -136,7 +138,16 @@ class ChambreController extends BaseController
     public function delete()
     {
         $model = model(Obj::class);
-        $model->delete($this->request->getPost('id'));
+        $id = $this->request->getPost('id');
+        $obj = $model->get($id);
+
+        $etudiantModel = model(Etudiant::class);
+        $equipementModel = model(Equipement::class);
+
+        $etudiantModel->where('chambre', $obj['numero'])->set('chambre', null)->update();
+        $equipementModel->where('chambre', $obj['numero'])->set('chambre', null)->update();
+
+        $model->delete($id);
 
         session()->setFlashData('flash_operation_success', 'Chambre supprimée avec succès');
 
